@@ -52,5 +52,7 @@ class ColorEvaluator(object):
 
 
 if __name__ == "__main__":
-    ce = ColorEvaluator("img/test.jpg", 3, 3)
-    print ce.getAveragePixelByRegion()
+    ce = ColorEvaluator("baseImage.jpeg", 28, 28)
+    res = ce.getAveragePixelByRegion()
+    for item in res[0]:
+        print map(int, item)
