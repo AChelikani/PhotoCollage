@@ -60,13 +60,16 @@ class CollageComputer(object):
             rowCounter += 1
         self.stitchVertical(rows, "finalimage.jpg")
 
-    def assembleFromPictures(self, dim1, dim2):
+    def assembleFromPictures(self, dim1, dim2, imgX, imgY):
+        '''
+        Assembles collage from already existing directory of images
+        '''
         imgList = glob.glob("img/*.jpg")
         random.shuffle(imgList)
         ic = imageColl.ImageCollector(config.BING_KEY)
         for img in imgList:
-            ic.resizeImage(img, 40, 40)
-        ce = colorEval.ColorEvaluator(self.basePath, 30, 30)
+            ic.resizeImage(img, imgX, imgY)
+        ce = colorEval.ColorEvaluator(self.basePath, dim1, dim2)
         avgPixels = ce.getAveragePixelByRegion()
         rowCounter = 1
         rows = []
@@ -94,4 +97,4 @@ if __name__ == "__main__":
     cc = CollageComputer("baseImage.jpeg")
     #topics = ["spring", "summer", "autumn", "winter", "beach", "park", "home", "fruit", "vegetable"]
     #cc.assembleCollage(topics)
-    cc.assembleFromPictures(28, 28)
+    cc.assembleFromPictures(30, 30, 40, 40)
