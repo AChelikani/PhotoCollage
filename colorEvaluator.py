@@ -49,6 +49,9 @@ class ColorEvaluator(object):
                 pixels += 1.0
         return (r/pixels, g/pixels, b/pixels)
 
+    def getAllPixels(self):
+        return self.pix
+
 
 
 if __name__ == "__main__":

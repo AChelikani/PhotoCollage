@@ -89,12 +89,10 @@ class CollageComputer(object):
             rowCounter += 1
         self.stitchVertical(rows, "finalimage.jpg")
 
-
-
 if __name__ == "__main__":
     #cc = CollageComputer("baseImage.jpeg")
     #cc.tintImage("img/spring1.jpg", (244, 119, 66))
     cc = CollageComputer("baseImage.jpeg")
     #topics = ["spring", "summer", "autumn", "winter", "beach", "park", "home", "fruit", "vegetable"]
     #cc.assembleCollage(topics)
-    cc.assembleFromPictures(30, 30, 40, 40)
+    cc.assembleFromPictures(90, 90, 5, 5)
