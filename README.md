@@ -4,5 +4,4 @@ Make a mosaic from a collection of photos. The more photos you have the more vis
 ## Example
 
 ![Start](baseImage.jpeg)
-![End](finalImage.jpg)
-
+![End](finalimage.jpg)
